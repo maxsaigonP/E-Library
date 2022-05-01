@@ -1,0 +1,63 @@
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (1, N'Xem môn học')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (2, N'Chỉnh sửa môn học')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (3, N'Xem tệp riêng tư')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (4, N'Chỉnh sửa tệp riêng tư')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (5, N'Xoá tệp riêng tư')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (6, N'Thêm mới tệp riêng tư')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (7, N'Tải xuống tệp riêng tư')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (8, N'Xem bài giảng/tàin nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (9, N'Chỉnh sửa bài giảng/tài nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (10, N'Xoá bài giảng/tài nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (11, N'Thêm mới bài giảng/tài nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (12, N'Tải xuống bài giảng/tài nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (13, N'Xem đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (14, N'Chỉnh sửa đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (15, N'Xoá đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (16, N'Thêm mới đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (17, N'Tải xuống đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (18, N'Phê duyệt đề thi/bài kiểm tra')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (19, N'Thêm vào môn học bài giảng/tài nguyên')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (20, N'Xem thông báo')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (21, N'Chỉnh sửa thông báo')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (22, N'Xoá thông báo')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (23, N'Thêm mới thông báo')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (24, N'Cài đặt thông báo')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (25, N'Xem phân quyền')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (26, N'Chỉnh sửa phân quyền')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (27, N'Xoá phân quyền')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (28, N'Thêm mới phân quyền')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (29, N'Xem tài khoản người dùng')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (30, N'Chỉnh sửa tài khoản người dùng')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (31, N'Xoá tài khoản người dùng')
+GO
+INSERT [dbo].[PhanQuyen] ([Id], [TenPhanQuyen]) VALUES (32, N'Thêm mới tài khoản người dùng')
