@@ -82,7 +82,9 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         [Route("/themthacmac")]
         public async Task<ActionResult<ThacMac>> PostThacMac([FromForm] ThacMac thacMac)
         {
+            thacMac.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd"));
             _context.ThacMac.Add(thacMac);
+            
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetThacMac", new { id = thacMac.Id }, thacMac);

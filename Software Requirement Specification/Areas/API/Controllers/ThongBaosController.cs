@@ -97,6 +97,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         public async Task<ActionResult<ThongBao>> ThemThongBao([FromForm] ThongBao thongBao)
         {
             thongBao.ThoiGian = DateTime.Now;
+            thongBao.LoaiThongBao = false;
             _context.ThongBao.Add(thongBao);
             await _context.SaveChangesAsync();
 

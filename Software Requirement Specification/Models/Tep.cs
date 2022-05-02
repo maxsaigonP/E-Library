@@ -22,7 +22,7 @@ namespace Software_Requirement_Specification.Models
         public IFormFile FileTep { get; set; }
        
 
-        public TaiLieu TaiLieu { get; set; }
+        public List<TaiLieu> TaiLieu { get; set; }
 
       //  public BaiGiang BaiGiang { get; set; }
         public DeThi DeThi { get; set; }

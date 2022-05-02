@@ -87,7 +87,8 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         // POST: api/Hois
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Hoi>> PostHoi(Hoi hoi)
+        [Route("/themcauhoi")]
+        public async Task<ActionResult<Hoi>> PostHoi([FromForm] Hoi hoi)
         {
             _context.Hoi.Add(hoi);
             await _context.SaveChangesAsync();

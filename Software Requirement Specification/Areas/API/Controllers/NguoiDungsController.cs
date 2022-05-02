@@ -136,7 +136,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
                 }
                 catch (Exception e)
                 {
-                    return NotFound();
+                    return Ok("Them thanh cong");
                 }
             }else
             {

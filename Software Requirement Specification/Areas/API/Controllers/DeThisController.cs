@@ -356,7 +356,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             var tb = new ThongBao();
             tb.LoaiThongBao = true;
             tb.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd")); //login
-            tb.NoiDung = "X đã tải lên một đề thi";
+            tb.NoiDung =HttpContext.Session.GetString("Ten")+ " đã tải lên một đề thi";
             tb.ThoiGian = DateTime.Now;
             _context.Add(tb);
             await _context.SaveChangesAsync();
@@ -379,8 +379,8 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             //
             var tb = new ThongBao();
             tb.LoaiThongBao = true;
-            tb.NguoiDungId = 1;
-            tb.NoiDung = "X đã xoá một đề thi";
+            tb.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd"));
+            tb.NoiDung = HttpContext.Session.GetString("Ten") + " đã xoá một đề thi";
             tb.ThoiGian = DateTime.Now;
             _context.Add(tb);
             await _context.SaveChangesAsync();

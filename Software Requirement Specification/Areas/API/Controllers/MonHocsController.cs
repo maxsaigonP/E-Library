@@ -26,20 +26,20 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         [Route("/teacher/dsmonhoc")]
         public async Task<ActionResult> DsMonHoc()
         {
-            int check = 0;
-            var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
-            var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
-            foreach (var i in vt)
-            {
-                if (i.PhanQuyenId == 1)
-                {
-                    check++;
-                }
-            }
-            if (check == 0)
-            {
-                return NoContent();
-            }
+            //int check = 0;
+            //var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
+            //var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
+            //foreach (var i in vt)
+            //{
+            //    if (i.PhanQuyenId == 1)
+            //    {
+            //        check++;
+            //    }
+            //}
+            //if (check == 0)
+            //{
+            //    return NoContent();
+            //}
             var result = (from a in _context.MonHoc
                           select new
                           {
@@ -75,20 +75,20 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         [Route("/teacher/dsmonhoctheolop")]
         public async Task<ActionResult> DsMonHocMaLop(int lopHoc)
         {
-            int check = 0;
-            var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
-            var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
-            foreach (var i in vt)
-            {
-                if (i.PhanQuyenId == 1)
-                {
-                    check++;
-                }
-            }
-            if (check == 0)
-            {
-                return NoContent();
-            }
+            //int check = 0;
+            //var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
+            //var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
+            //foreach (var i in vt)
+            //{
+            //    if (i.PhanQuyenId == 1)
+            //    {
+            //        check++;
+            //    }
+            //}
+            //if (check == 0)
+            //{
+            //    return NoContent();
+            //}
             var result = (from a in _context.MonHoc
                           join x in _context.LopHocMonHoc on a.Id equals x.MonHocId
                           where x.LopHocId == lopHoc
@@ -211,20 +211,20 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> SuaMonHoc(int id,[FromBody] MonHoc monHoc)
         {
-            int check = 0;
-            var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
-            var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
-            foreach (var i in vt)
-            {
-                if (i.PhanQuyenId == 2)
-                {
-                    check++;
-                }
-            }
-            if (check == 0)
-            {
-                return NoContent();
-            }
+            //int check = 0;
+            //var nd = await _context.NguoiDung.FindAsync(int.Parse(HttpContext.Session.GetString("Nd")));
+            //var vt = await _context.VaiTroPhanQuyen.Where(v => v.VaiTroId == nd.VaitroId).ToListAsync();
+            //foreach (var i in vt)
+            //{
+            //    if (i.PhanQuyenId == 2)
+            //    {
+            //        check++;
+            //    }
+            //}
+            //if (check == 0)
+            //{
+            //    return NoContent();
+            //}
             if (id != monHoc.Id)
             {
                 return BadRequest();

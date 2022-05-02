@@ -416,8 +416,7 @@ namespace Software_Requirement_Specification.Migrations
 
                     b.HasIndex("NguoiDungId");
 
-                    b.HasIndex("TepId")
-                        .IsUnique();
+                    b.HasIndex("TepId");
 
                     b.ToTable("TaiLieu");
                 });
@@ -778,8 +777,8 @@ namespace Software_Requirement_Specification.Migrations
                         .IsRequired();
 
                     b.HasOne("Software_Requirement_Specification.Models.Tep", "Tep")
-                        .WithOne("TaiLieu")
-                        .HasForeignKey("Software_Requirement_Specification.Models.TaiLieu", "TepId")
+                        .WithMany("TaiLieu")
+                        .HasForeignKey("TepId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

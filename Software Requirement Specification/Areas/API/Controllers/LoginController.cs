@@ -98,9 +98,10 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
 
             if(tk.Count>0)
             {
+                var a = await _context.NguoiDung.FindAsync(tk[0].NguoiDungId);
                 HttpContext.Session.SetString("Id", tk[0].Id.ToString());
                 HttpContext.Session.SetString("Nd", tk[0].NguoiDungId.ToString());
-
+                HttpContext.Session.SetString("Ten", a.Ten);
                 var nd = await _context.NguoiDung.FindAsync(tk[0].NguoiDungId);
                 HttpContext.Session.SetInt32("VaiTro", nd.VaitroId);
 
@@ -134,15 +135,18 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
                 {
                     return "Het phien";
                 }
-              
+
+                var a = await _context.NguoiDung.Where(n => n.Email == HttpContext.Session.GetString("Gmail")).ToListAsync();
                 try
                 {
+                    _context.TaiKhoan.Update(tk);
                    await _context.SaveChangesAsync();
                     HttpContext.Session.Remove("XacThuc");
                     var tb = new ThongBao();
                     tb.LoaiThongBao = true;
                     tb.NguoiDungId = tk.NguoiDungId;
                     tb.NoiDung = tk.NguoiDung.Ten+ " đã thay đổi mật khẩu";
+                    tb.ChuDe = "Thay đổi mật khẩu";
                     tb.ThoiGian = DateTime.Now;
                     _context.Add(tb);
                     await _context.SaveChangesAsync();

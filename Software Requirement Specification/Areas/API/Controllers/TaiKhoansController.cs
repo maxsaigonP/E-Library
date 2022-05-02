@@ -59,9 +59,10 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
                 await _context.SaveChangesAsync();
                 var tb = new ThongBao();
                 tb.LoaiThongBao = true;
-                tb.NguoiDungId = 1;
-                tb.NoiDung = "X đã cập nhật thông tin tài khoản";
+                tb.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd"));
+                tb.NoiDung = HttpContext.Session.GetString("Ten") + " đã chỉnh sửa một tài khoản mới";
                 tb.ThoiGian = DateTime.Now;
+                tb.ChuDe = "Cập nhật tài khoản";
                 _context.Add(tb);
                 await _context.SaveChangesAsync();
             }
@@ -83,6 +84,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         // POST: api/TaiKhoans
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("/admin/themtaikhoan")]
         public async Task<ActionResult<TaiKhoan>> ThemTaiKhoan([FromBody] TaiKhoan taiKhoan)
         {
             var m = await _context.NguoiDung.Where(n => n.Id == taiKhoan.NguoiDungId).FirstOrDefaultAsync();
@@ -91,13 +93,14 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             await _context.SaveChangesAsync();
             var tb = new ThongBao();
             tb.LoaiThongBao = true;
-            tb.NguoiDungId = 1;
-            tb.NoiDung = "X đã thêm một tài khoản mới";
+            tb.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd"));
+            tb.NoiDung = HttpContext.Session.GetString("Ten")+" đã thêm một tài khoản mới";
             tb.ThoiGian = DateTime.Now;
+            tb.ChuDe = "Thêm tài khoản";
             _context.Add(tb);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTaiKhoan", new { id = taiKhoan.Id }, taiKhoan);
+            return Ok(taiKhoan);
         }
 
         // DELETE: api/TaiKhoans/5

@@ -45,7 +45,23 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
 
             return tep;
         }
-        
+        //
+        [HttpGet]
+        [Route("/admin/xemdstepriengtu")]
+        public async Task<ActionResult<IEnumerable<Tep>>> XemTep()
+        {
+            var result = (from a in _context.Tep
+                          where a.LoaiTep.Equals("Tệp riêng tư")
+                          select new
+                          {
+                              TheLoai = a.TheLoai,
+                              Ten = a.TenTep,
+                              NguoiChinhSuaCuoi = a.NguoiChinhSua,
+                              NgaySuaCuoi = a.NgaySuaCuoi,
+                              KichThuc = a.KichThuoc
+                          }).ToList();
+            return Ok(result);
+        }
         //
         [HttpGet]
         [Route("/admin/loctepriengtu")]
@@ -150,6 +166,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             tb.LoaiThongBao = true;
             tb.NguoiDungId = 1;
             tb.NoiDung = "X đã thêm một tệp riêng tư ";
+            tb.ChuDe = "Thêm tệp riêng tư";
             tb.DoiTuong = 2;
             tb.ThoiGian = DateTime.Now;
             _context.Add(tb);
@@ -158,7 +175,8 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         }
 
         // DELETE: api/Teps/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("/admin/xoatepriengtu/{id}")]
         public async Task<IActionResult> XoaTep(int id)
         {
             var tep = await _context.Tep.FindAsync(id);
@@ -181,7 +199,8 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             var tb = new ThongBao();
             tb.LoaiThongBao = true;
             tb.NguoiDungId = 1;
-            tb.NoiDung = "X đã xoá một tệp riêng tư ";
+            tb.NoiDung = HttpContext.Session.GetString("Ten") + " đã xoá một tệp riêng tư";
+            tb.ChuDe = "Xoá tệp riêng tư";
             tb.DoiTuong = 2;
             tb.ThoiGian = DateTime.Now;
             _context.Add(tb);

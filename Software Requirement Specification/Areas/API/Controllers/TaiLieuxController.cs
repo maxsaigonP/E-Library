@@ -73,7 +73,6 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         public async Task<ActionResult> TimKiemTaiLieu(string txtSearch)
         {
             var result = (from a in _context.TaiLieu
-                          join b in _context.Tep on a.TepId equals b.Id
                           join x in _context.LopHocMonHoc on a.MonHocId equals x.MonHocId
                           where a.TieuDe.Contains(txtSearch) || x.LopHoc.TenLop.Contains(txtSearch) || a.MonHoc.TenMonHoc.Contains(txtSearch)
                           select new
@@ -432,7 +431,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
 
             }
             await _context.SaveChangesAsync();
-            _context.TaiLieu.Add(taiLieu);
+          
             taiLieu.TinhTrang = false;
             taiLieu.TepId = tep.Id;
             taiLieu.NgayGuiPheDuyet = DateTime.Now;
@@ -440,6 +439,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             taiLieu.NguoiChinhSuaCuoi = taiLieu.NguoiDungId; //role
             taiLieu.LoaiTaiLieu = "Bài giảng";
             taiLieu.NguoiDungId = int.Parse(HttpContext.Session.GetString("Nd"));
+            _context.TaiLieu.Add(taiLieu);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -501,6 +501,9 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
             tl.LoaiTaiLieu = tlieu.LoaiTaiLieu;
             tl.NguoiChinhSuaCuoi = tlieu.NguoiChinhSuaCuoi;
             tl.TieuDe = tieuDe;
+
+            var a = await _context.Tep.FindAsync(tlieu.TepId);
+            tl.TenTaiLieu = a.TenTep;
             _context.TaiLieu.Add(tl);
             await _context.SaveChangesAsync();
             if(lopHoc!=0)
