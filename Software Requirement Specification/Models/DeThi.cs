@@ -27,7 +27,7 @@ namespace Software_Requirement_Specification.Models
         public int NguoiPheDuyet { get; set; }
         public string GhiChu { get; set; }
 
-        public List<CauHoi> CauHoi { get; set; }
+       // public List<CauHoi> CauHoi { get; set; }
 
 
         

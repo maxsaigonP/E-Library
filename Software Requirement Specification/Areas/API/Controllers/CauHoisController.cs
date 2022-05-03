@@ -76,6 +76,7 @@ namespace Software_Requirement_Specification.Areas.API.Controllers
         // POST: api/CauHois
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Route("/teacher/themcauhoi")]
         public async Task<ActionResult<CauHoi>> ThemCauHoi([FromForm] CauHoi cauHoi, [FromForm] string[] dapAn, [FromForm] int dapAnDung)
         {
             _context.CauHoi.Add(cauHoi);
