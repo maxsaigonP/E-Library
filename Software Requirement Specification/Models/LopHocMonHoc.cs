@@ -9,10 +9,10 @@ namespace Software_Requirement_Specification.Models
     {
         public int Id { get; set; }
         public int LopHocId { get; set; }
-        public LopHoc LopHoc { get; set; }
+        public LopHoc? LopHoc { get; set; }
 
         public int MonHocId { get; set; }
 
-        public MonHoc MonHoc { get; set; }
+        public MonHoc? MonHoc { get; set; }
     }
 }

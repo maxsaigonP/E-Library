@@ -10,7 +10,7 @@ namespace Software_Requirement_Specification.Models
         public int Id { get; set; }
         public string TenPhanQuyen { get; set; }
 
-        public List<VaiTroPhanQuyen> VaiTroPhanQuyen { get; set; }
+        public List<VaiTroPhanQuyen>? VaiTroPhanQuyen { get; set; }
 
 
     }

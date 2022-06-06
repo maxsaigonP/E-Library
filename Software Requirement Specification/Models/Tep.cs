@@ -11,21 +11,21 @@ namespace Software_Requirement_Specification.Models
     {
         public int Id { get; set; }
         public string TenTep { get; set; }
-        public string TheLoai { get; set; }
-        public string LoaiTep { get; set; }
-        public int NguoiChinhSua { get; set; }
-        public DateTime NgaySuaCuoi { get; set; }
+        public string? TheLoai { get; set; }
+        public string? LoaiTep { get; set; }
+        public string NguoiChinhSua { get; set; }
+        public DateTime? NgaySuaCuoi { get; set; }
         public string File { get; set; }
-        public int KichThuoc { get; set; }
+        public int? KichThuoc { get; set; }
 
         [NotMapped]
         public IFormFile FileTep { get; set; }
        
 
-        public List<TaiLieu> TaiLieu { get; set; }
+        public List<TaiLieu>? TaiLieu { get; set; }
 
       //  public BaiGiang BaiGiang { get; set; }
-        public DeThi DeThi { get; set; }
+        public DeThi? DeThi { get; set; }
 
     }
 }

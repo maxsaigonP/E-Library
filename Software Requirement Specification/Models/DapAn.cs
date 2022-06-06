@@ -10,7 +10,7 @@ namespace Software_Requirement_Specification.Models
         public int Id { get; set; }
 
         public int CauHoiId { get; set; }
-        public CauHoi CauHoi { get; set; }
+        public CauHoi? CauHoi { get; set; }
         public string NoiDung { get; set; }
 
         public bool Dung { get; set; }

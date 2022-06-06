@@ -23,7 +23,7 @@ namespace Software_Requirement_Specification.Models
        // public ThongBao ThongBao { get; set; }
 
   
-        public List<NguoiDung> NguoiDung { get; set; }
+        public List<TaiKhoan> TaiKhoans { get; set; }
 
         public List<VaiTroPhanQuyen> VaiTroPhanQuyen { get; set; }
         

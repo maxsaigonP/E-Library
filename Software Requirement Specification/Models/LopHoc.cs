@@ -10,8 +10,8 @@ namespace Software_Requirement_Specification.Models
         public int Id { get; set; }
         public string TenLop { get; set; }
 
-        public List<LopHocMonHoc> LopHocMonHoc { get; set; }
-        public List<LopHocTaiLieu> LopHocTaiLieu { get; set; }
+        public List<LopHocMonHoc>? LopHocMonHoc { get; set; }
+        public List<LopHocTaiLieu>? LopHocTaiLieu { get; set; }
 
        
 

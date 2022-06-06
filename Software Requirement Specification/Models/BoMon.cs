@@ -10,6 +10,6 @@ namespace Software_Requirement_Specification.Models
         public int Id { get; set; }
         public string TenBoMon { get; set; }
 
-        public List<MonHoc> MonHoc { get; set; }
+        public List<MonHoc>? MonHoc { get; set; }
     }
 }

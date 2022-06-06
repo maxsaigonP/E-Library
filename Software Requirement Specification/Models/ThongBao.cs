@@ -13,9 +13,9 @@ namespace Software_Requirement_Specification.Models
 
         public string ChuDe { get; set; }
 
-        public int NguoiDungId { get; set; }
+        public string TaiKhoanId { get; set; }
 
-        public int? HocVienId { get; set; }
+        public string? HocVienId { get; set; }
 
         public int DoiTuong { get; set; } //1=MonHoc 2=Tep 3=Dethi 4=PhanQuyen 5=TaiKhoan
         public string NoiDung { get; set; }

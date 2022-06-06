@@ -15,6 +15,6 @@ namespace Software_Requirement_Specification.Models
         public int LoaiCauHoi { get; set; } // 1=Tuluan  2=tracnghiem
 
         public int DoKho { get; set; } //1=thap 2=tb 3=cao
-        public List<DapAn> DapAn { get; set; }
+        public List<DapAn>? DapAn { get; set; }
     }
 }
